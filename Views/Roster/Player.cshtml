@@ -1,0 +1,10 @@
+@model IEnumerable<Player>
+
+@foreach (var item in Model)
+{
+    <h1>@item.fullName</h1>
+    <p>Current Team: @item.currentTeam.name</p>
+    <p>Age: @item.currentAge</p>
+    <p>Nationality: @item.nationality</p>
+    <p>Primary Position: @item.primaryPosition.name</p>
+}
