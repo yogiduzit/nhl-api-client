@@ -1,12 +1,16 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
-
-COPY dist /app
-
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
 
-EXPOSE 80/tcp
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
 
-EXPOSE 443/tcp
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
 
-ENTRYPOINT ["dotnet", "AspCoreMsSQL.dll"]
-
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "comp4870-assignment-1.dll"]
