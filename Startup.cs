@@ -68,8 +68,7 @@ namespace comp4870_assignment_1
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // context.Database.Migrate();
-            // context.Database.Migrate();
+            context.Database.Migrate();
 
             app.UseEndpoints(endpoints =>
             {
