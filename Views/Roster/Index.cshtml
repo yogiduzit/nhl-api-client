@@ -1,0 +1,16 @@
+@model IEnumerable<RosterItem>
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a asp-controller="Roster"
+                asp-action="Player"
+                asp-route-link=@item.person.link>
+                    @item.person.fullName
+                </a>
+            </td>
+        </tr>
+    }
+</table>
