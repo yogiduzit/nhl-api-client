@@ -30,11 +30,14 @@ namespace comp4870_assignment_1
             var host = Configuration["DBHOST"] ?? "localhost";
             var port = Configuration["DBPORT"] ?? "1444";
             var password = Configuration["DBPASSWORD"] ?? "SqlExpress!";
+            var db = Configuration["DBNAME"] ?? "assignment01db";
 
-            string connStr = $"Server=tcp:{host},{port};Database=funkydb;UID=sa;PWD={password};";
+            string connStr = $"Server=tcp:{host},{port};Database={db};UID=sa;PWD={password};";
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connStr));
+
+            services.AddHttpClient();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -65,7 +68,8 @@ namespace comp4870_assignment_1
             app.UseAuthentication();
             app.UseAuthorization();
 
-            context.Database.Migrate();
+            // context.Database.Migrate();
+            // context.Database.Migrate();
 
             app.UseEndpoints(endpoints =>
             {
