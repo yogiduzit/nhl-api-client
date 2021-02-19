@@ -9,7 +9,7 @@ services:
     volumes:
       - datafiles:/var/opt/mssql/data
     ports:
-      - "1433:1433"
+      - "1444:1433"
     restart: always
     
     environment:
@@ -30,4 +30,5 @@ services:
       - DBHOST=db
       - DBPORT=1433
       - DBPASSWORD=SqlExpress!
+      - DBNAME=assignment01db
       - ASPNETCORE_ENVIRONMENT=Development

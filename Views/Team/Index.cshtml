@@ -1,0 +1,32 @@
+@model IEnumerable<comp4870_assignment_1.Models.Team>
+
+@{
+  ViewData["Title"] = "List All NHL Teams";
+}
+
+
+<div>
+  <h1 class="display-4">@ViewData["Title"]</h1>
+
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>@Html.DisplayNameFor(model => model.id)</th>
+      <th>@Html.DisplayNameFor(model => model.abbreviation)</th>
+      <th>@Html.DisplayNameFor(model => model.name)</th>
+      <th>@Html.DisplayNameFor(model => model.locationName)</th>
+      <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>@item.id</td>
+        <td>@item.abbreviation</td>
+        <td>@item.name</td>
+        <td>@item.locationName</td>
+        <td style="text-align: center;">
+            <a asp-action="Details" asp-route-id="@item.id" class="btn btn-sm btn-light">View Team Details</a>
+        </td>
+      </tr>
+      }
+  </table>
+</div>
