@@ -30,7 +30,7 @@ namespace comp4870_assignment_1
             var host = Configuration["DBHOST"] ?? "localhost";
             var port = Configuration["DBPORT"] ?? "1444";
             var password = Configuration["DBPASSWORD"] ?? "SqlExpress!";
-            var db = Configuration["DBNAME"] ?? "assignment01db";
+            var db = Configuration["DBNAME"] ?? "funkydb";
 
             string connStr = $"Server=tcp:{host},{port};Database={db};UID=sa;PWD={password};";
 
