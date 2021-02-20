@@ -35,10 +35,11 @@ namespace comp4870_assignment_1
             string connStr = $"Server=tcp:{host},{port};Database={db};UID=sa;PWD={password};";
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connStr));
+                options.UseSqlServer(connStr)
+            );
 
             services.AddHttpClient();
-
+            
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)

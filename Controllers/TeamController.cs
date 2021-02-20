@@ -9,9 +9,11 @@ using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.Text.Json;
 using comp4870_assignment_1.DS;
+using Microsoft.AspNetCore.Authorization;
 
 namespace comp4870_assignment_1.Controllers
 {
+    [Authorize]
     public class TeamController : Controller
     {
 
@@ -70,7 +72,6 @@ namespace comp4870_assignment_1.Controllers
                 var responseStream = await response.Content.ReadAsStreamAsync();
                 RosterRes = await JsonSerializer.DeserializeAsync<PlayerResponseDS>(responseStream);
                 Players = RosterRes.roster;
-                
             } 
             
             return View(Players);
