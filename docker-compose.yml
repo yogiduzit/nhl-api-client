@@ -9,7 +9,7 @@ services:
     volumes:
       - datafiles:/var/opt/mssql/data
     ports:
-      - "1433:1433"
+      - "1444:1433"
     restart: always
     
     environment:
@@ -23,11 +23,12 @@ services:
     depends_on:
       - db
     ports:
-      - "5000:80"
-      - "5001:443"
+      - "8888:80"
+      - "8889:443"
     restart: always
     environment:
       - DBHOST=db
       - DBPORT=1433
       - DBPASSWORD=SqlExpress!
+      - DBNAME=funkydb
       - ASPNETCORE_ENVIRONMENT=Development

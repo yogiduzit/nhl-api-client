@@ -11,26 +11,28 @@ namespace comp4870_assignment_1.Controllers
 {
     public class RosterController : Controller
     {
+        const string BASE_URL = "https://statsapi.web.nhl.com/api/v1";
         public async Task<IActionResult> Index()
         {
-            Roster roster = new Roster();
+            List<RosterItem> roster = new List<RosterItem>();
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://statsapi.web.nhl.com/api/v1/teams/2/roster"))
+                using (var response = await httpClient.GetAsync($"{BASE_URL}/teams/2/roster"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    roster = JsonConvert.DeserializeObject<Roster>(apiResponse);
+                    roster = JsonConvert.DeserializeObject<List<RosterItem>>(apiResponse);
                 }
             }
-            return View(roster.roster);
+            return View(roster);
         }
 
         public async Task<IActionResult> PlayerAsync(string link)
         {
             PlayerList playerList = new PlayerList();
+            string id = link.Split('/').Last();
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://statsapi.web.nhl.com" + link))
+                using (var response = await httpClient.GetAsync($"{BASE_URL}/people/{id}"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     playerList = JsonConvert.DeserializeObject<PlayerList>(apiResponse);
