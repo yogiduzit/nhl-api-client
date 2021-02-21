@@ -2,9 +2,9 @@
 
 @foreach (var item in Model)
 {
-    <h1>@item.fullName</h1>
-    <p>Current Team: @item.currentTeam.name</p>
-    <p>Age: @item.currentAge</p>
-    <p>Nationality: @item.nationality</p>
-    <p>Primary Position: @item.primaryPosition.name</p>
+    <h1 class="text-light">@item.fullName</h1>
+    <p class="text-light">Current Team: @item.currentTeam.name</p>
+    <p class="text-light">Age: @item.currentAge</p>
+    <p class="text-light">Nationality: @item.nationality</p>
+    <p class="text-light">Primary Position: @item.primaryPosition.name</p>
 }
