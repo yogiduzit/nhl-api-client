@@ -8,18 +8,18 @@
   <h1 class="display-4">@ViewData["Title"]</h1>
     <table class="table table-striped table-bordered">
     <tr>
-      <th>@Html.DisplayNameFor(model => model.person.fullName)</th>
-      <th>@Html.DisplayNameFor(model => model.person.fullName)</th>
-      <th>@Html.DisplayNameFor(model => model.position.name)</th>
-      <th></th>
+      <th class="bg-coolors-blue-jeans">@Html.DisplayNameFor(model => model.jerseyNumber)</th>
+      <th class="bg-coolors-blue-jeans">@Html.DisplayNameFor(model => model.person.fullName)</th>
+      <th class="bg-coolors-blue-jeans">@Html.DisplayNameFor(model => model.position.name)</th>
+      <th class="bg-coolors-blue-jeans"></th>
     </tr>
     @foreach (var item in Model)
     {
       <tr>
-        <td>@item.jerseyNumber</td>
-        <td>@item.person.fullName</td>
-        <td>@item.position.name</td>
-        <td style="text-align: center;">
+        <td class="bg-coolors-blue-jeans">@item.jerseyNumber</td>
+        <td class="bg-coolors-blue-jeans">@item.person.fullName</td>
+        <td class="bg-coolors-blue-jeans">@item.position.name</td>
+        <td class="bg-coolors-blue-jeans" style="text-align: center;">
             <a asp-controller="Roster" asp-action="Player" asp-route-link="@item.person.link" class="btn btn-sm btn-light">View Player Details</a>
         </td>
       </tr>

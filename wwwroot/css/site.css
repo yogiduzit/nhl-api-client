@@ -69,3 +69,27 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+header {
+    background-color: #7272AB;
+}
+
+footer {
+    background-color: #7272AB;
+}
+
+.bg-coolors-red {
+    background-color: #BA2C73;
+}
+
+.coolors-red {
+    color: #BA2C73;
+}
+
+.bg-coolors-blue-jeans {
+    background-color: #35A7FF;
+}
+
+.logo-image {
+    height: 50px;
+}
