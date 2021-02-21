@@ -8,6 +8,12 @@
 - Log in to the application using the following credentials
     - Username: a@a.a
     - Password: P@$$w0rd
+    
+# Testing Instructions
+ - If you run into the `The antiforgery token could not be decrypted` error,
+ try the following steps
+    - Clear cache, cookies and do a hard reload
+    - Open application in incognito mode of the browser
 
 # Students 
 Name - Yogesh Kumar Verma
@@ -27,4 +33,3 @@ All requirements have been implemented
 
 # Major challenges
 - Fixing the `The antiforgery token could not be decrypted` error
-
