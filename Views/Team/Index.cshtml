@@ -10,20 +10,20 @@
 
   <table class="table table-striped table-bordered">
     <tr>
-      <th>@Html.DisplayNameFor(model => model.id)</th>
-      <th>@Html.DisplayNameFor(model => model.abbreviation)</th>
-      <th>@Html.DisplayNameFor(model => model.name)</th>
-      <th>@Html.DisplayNameFor(model => model.locationName)</th>
-      <th></th>
+      <th class="bg-coolors-blue-jeans">@Html.DisplayNameFor(model => model.id)</th>
+      <th class="bg-coolors-blue-jeans">@Html.DisplayNameFor(model => model.abbreviation)</th>
+      <th class="bg-coolors-blue-jeans">@Html.DisplayNameFor(model => model.name)</th>
+      <th class="bg-coolors-blue-jeans">@Html.DisplayNameFor(model => model.locationName)</th>
+      <th class="bg-coolors-blue-jeans"></th>
     </tr>
     @foreach (var item in Model)
     {
       <tr>
-        <td>@item.id</td>
-        <td>@item.abbreviation</td>
-        <td>@item.name</td>
-        <td>@item.locationName</td>
-        <td style="text-align: center;">
+        <td class="bg-coolors-blue-jeans">@item.id</td>
+        <td class="bg-coolors-blue-jeans">@item.abbreviation</td>
+        <td class="bg-coolors-blue-jeans">@item.name</td>
+        <td class="bg-coolors-blue-jeans">@item.locationName</td>
+        <td class="bg-coolors-blue-jeans" style="text-align: center;">
             <a asp-action="Details" asp-route-id="@item.id" class="btn btn-sm btn-light">View Team Details</a>
         </td>
       </tr>
